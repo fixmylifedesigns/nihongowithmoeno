@@ -1,4 +1,24 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    // Enable edge runtime for API routes
+    experimental: {
+      serverActions: {},
+    },
+    images: {
+      unoptimized: true,
+      domains: ['*'],
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: '**',
+        },
+      ],
+    },
+    // Add in for mobile 
+    output: "export",
+    distDir: ".next",
+    // distDir: 'out',
+  };
+  
+  export default nextConfig;
+  

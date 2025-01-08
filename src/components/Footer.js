@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-white text-lg font-bold mb-4">
-              Japanese with Moeno
+              Nihongo with Moeno
             </h3>
             <p className="mb-4">
               Learn Japanese through immersive, one-on-one lessons with a native
@@ -32,28 +32,33 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/material" className="hover:text-white">
+                  Learning Material
+                </Link>
+              </li>
+              <li>
                 <Link href="/faq" className="hover:text-white">
                   FAQ
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/contact" className="hover:text-white">
                   Contact
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-semibold mb-4">Contact</h4>
             <ul className="space-y-2">
-              <li>Email: contact@japanesewithmoeno.com</li>
+              <li>Email: nihongowithmoeno@gmail.com</li>
               <li>
                 <div className="flex space-x-4 mt-4">
-                  <a href="#" className="hover:text-white">
-                    Twitter
+                  <a href="https://www.tiktok.com/@nihongowithmoeno" className="hover:text-white">
+                    Tiktok
                   </a>
-                  <a href="#" className="hover:text-white">
+                  <a href="https://www.instagram.com/nihongowithmoeno" className="hover:text-white">
                     Instagram
                   </a>
                 </div>
@@ -63,7 +68,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-center">
-          <p>&copy; {currentYear} Japanese with Moeno. All rights reserved.</p>
+          <p>&copy; {currentYear} Nihongo with Moeno. All rights reserved.</p>
         </div>
       </div>
     </footer>

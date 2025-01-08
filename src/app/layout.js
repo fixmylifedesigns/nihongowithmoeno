@@ -17,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geist.variable} min-h-screen flex flex-col`}>
+      <body className={`${geist.variable} min-h-screen flex flex-col bg-gray-900`} suppressHydrationWarning>
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />

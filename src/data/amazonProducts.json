@@ -1,0 +1,76 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Minna No Nihongo: Beginner 1, 2nd Edition",
+      "imageUrl": "https://m.media-amazon.com/images/I/51R397uXFwL._SL1002_.jpg",
+      "productUrl": "https://amzn.to/404HYRb",
+      "featured": true,
+      "productType": "Japanese Language"
+    },
+    {
+      "id": 2,
+      "name": "Minna no Nihongo [2nd ver] vol. 1 ROMANIZED Ver. Translation & Grammatical Notes English ver.",
+      "imageUrl": "https://m.media-amazon.com/images/I/81vqimg4IxL._SY522_.jpg",
+      "productUrl": "https://amzn.to/4j4sGoi",
+      "featured": true,
+      "productType": "Japanese Language"
+    },
+    {
+      "id": 3,
+      "name": "Minna no Nihongo : Translation & Grammatical Note 1 Spanish Ver (Spanish and Japanese Edition)",
+      "imageUrl": "https://m.media-amazon.com/images/I/71tiGNYMcZL._SY522_.jpg",
+      "productUrl": "https://amzn.to/40aLJVc",
+      "featured": true,
+      "productType": "Japanese Language"
+    },
+    {
+      "id": 4,
+      "name": "Minna No Nihongo Elementary II Second Edition Translation and Grammar Notes - English",
+      "imageUrl": "https://m.media-amazon.com/images/I/61DxttUpW-L._SY522_.jpg",
+      "productUrl": "https://m.media-amazon.com/images/I/61DxttUpW-L._SY522_.jpg",
+      "featured": true,
+      "productType": "Japanese Language"
+    },
+    {
+      "id": 5,
+      "name": "Minna No Nihongo Shokyu 1 Text Translation and Grammar English , Hiragana Katakana Chart",
+      "imageUrl": "https://m.media-amazon.com/images/I/615QFmx3cGL._SY522_.jpg",
+      "productUrl": "https://amzn.to/3ZZLuMA",
+      "featured": false,
+      "productType": "Japanese Language"
+    },
+    {
+      "id": 6,
+      "name": "Minna No Nihongo Shokyu 1 Textbook Translation and Grammar Spanish , Hiragana Katakana Chart",
+      "imageUrl": "https://m.media-amazon.com/images/I/61jRtsx5JPL._SY522_.jpg",
+      "productUrl": "https://amzn.to/40oUWL0",
+      "featured": false,
+      "productType": "Japanese Language"
+    },
+    {
+      "id": 7,
+      "name": "Kanji Master N5 - Introduction to Kanji (Revised Edition) (Japanese Edition)",
+      "imageUrl": "https://m.media-amazon.com/images/I/61bUTsO+V1L._SY522_.jpg",
+      "productUrl": "https://amzn.to/4a57vOZ",
+      "featured": false,
+      "productType": "Kanji"
+    },
+    {
+      "id": 8,
+      "name": "Kanji Master N5 Introduction and N4 for Beginners with Hiragana Katakana Chart",
+      "imageUrl": "https://m.media-amazon.com/images/I/61Q8RUE+BCL._SY522_.jpg",
+      "productUrl": "https://amzn.to/4adp3Z5",
+      "featured": false,
+      "productType": "Kanji"
+    },
+    {
+      "id": 9,
+      "name": " Mastering Kana かなマスター 改訂版",
+      "imageUrl": "https://m.media-amazon.com/images/I/71ecv48dkiL._SY522_.jpg",
+      "productUrl": "https://amzn.to/4a7sCjE",
+      "featured": false,
+      "productType": "Hiragana & Katakana Study"
+    }
+  ]
+}

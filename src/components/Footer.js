@@ -69,6 +69,9 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-center">
           <p>&copy; {currentYear} Nihongo with Moeno. All rights reserved.</p>
+          <p className="mt-2">
+            Website made by <a href="https://stealthwork.app" className="text-blue-400 hover:underline">stealthwork.app</a>
+          </p>
         </div>
       </div>
     </footer>

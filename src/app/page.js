@@ -113,7 +113,7 @@ export default function Home() {
           </p>
           <Button
             variant="secondary"
-            className="min-w-[200px]"
+            className="min-w-[200px] bg-white"
             onClick={handleModalToggle}
           >
             Join the Waitlist

@@ -20,10 +20,10 @@ export const tutorials = [
     category: "Start",
   },
   {
-    title: "NihongowithMoeno Dashboard intro",
+    title: "Word of the day post",
     description: "Word of the day Instagram Post with Chatgpt and Canva",
     japanese: {
-      url: "https://youtu.be/s3uHwXG1yQw",
+      url: "https://youtu.be/LE1lDIeclmU",
     },
     english: {
       url: "https://youtu.be/q5trk7N7Irg",

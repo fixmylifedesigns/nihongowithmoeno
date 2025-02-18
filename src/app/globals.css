@@ -1,21 +1,137 @@
+/* src/app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
+  /* Base colors */
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* UI Colors */
+  --card-background: #ffffff;
+  --card-border: #e5e7eb;
+  --card-hover: #f8fafc;
+  
+  /* Accent colors */
+  --primary: #4f46e5;
+  --primary-foreground: #ffffff;
+  --primary-hover: #4338ca;
+  
+  /* Text colors */
+  --text-primary: #171717;
+  --text-secondary: #4b5563;
+  --text-tertiary: #6b7280;
+  
+  /* Status colors */
+  --success: #059669;
+  --success-background: #ecfdf5;
+  --warning: #d97706;
+  --warning-background: #fffbeb;
+  --error: #dc2626;
+  --error-background: #fef2f2;
+  
+  /* Border colors */
+  --border-light: #e5e7eb;
+  --border-medium: #d1d5db;
+  --border-dark: #9ca3af;
+  
+  /* Component specific */
+  --input-background: #ffffff;
+  --input-border: #d1d5db;
+  --input-focus-border: #4f46e5;
+  --input-placeholder: #9ca3af;
+  
+  /* Navigation */
+  --nav-background: #ffffff;
+  --nav-border: #e5e7eb;
+  --nav-active: #4f46e5;
+  --nav-hover: #4b5563;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Base colors */
+    --background: #0f172a;
+    --foreground: #f8fafc;
+    
+    /* UI Colors */
+    --card-background: #1e293b;
+    --card-border: #334155;
+    --card-hover: #2d3a52;
+    
+    /* Text colors */
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-tertiary: #94a3b8;
+    
+    /* Border colors */
+    --border-light: #334155;
+    --border-medium: #475569;
+    --border-dark: #64748b;
+    
+    /* Component specific */
+    --input-background: #1e293b;
+    --input-border: #475569;
+    --input-focus-border: #6366f1;
+    --input-placeholder: #64748b;
+    
+    /* Status colors stay the same but with darker backgrounds */
+    --success-background: #064e3b;
+    --warning-background: #78350f;
+    --error-background: #7f1d1d;
+    
+    /* Navigation */
+    --nav-background: #1e293b;
+    --nav-border: #334155;
+    --nav-active: #6366f1;
+    --nav-hover: #cbd5e1;
   }
 }
 
 body {
-  color: var(--foreground);
+  color: var(--text-primary);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Utility classes for common patterns */
+.card {
+  background-color: var(--card-background);
+  border: 1px solid var(--card-border);
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  background-color: var(--card-hover);
+}
+
+.input {
+  background-color: var(--input-background);
+  border: 1px solid var(--input-border);
+  color: var(--text-primary);
+}
+
+.input:focus {
+  border-color: var(--input-focus-border);
+  outline: none;
+  ring: 2px var(--input-focus-border);
+}
+
+.input::placeholder {
+  color: var(--input-placeholder);
+}
+
+/* Add smooth transitions for color mode changes */
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

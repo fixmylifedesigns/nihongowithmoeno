@@ -41,11 +41,11 @@ const Footer = () => {
                   FAQ
                 </Link>
               </li>
-              {/* <li>
-                <Link href="/contact" className="hover:text-white">
-                  Contact
+              <li>
+                <Link href="/login" className="hover:text-white">
+                  Teacher Dashboard
                 </Link>
-              </li> */}
+              </li>
             </ul>
           </div>
 

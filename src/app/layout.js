@@ -2,6 +2,7 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { AuthContextProvider } from "../context/AuthContext";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -24,11 +25,12 @@ export const metadata = {
     "Study Japanese online",
     "Japanese language learning",
     "Japan",
-    "Japanese Teacher"
+    "Japanese Teacher",
   ],
   author: "Moeno | Nihongo with Moeno",
   openGraph: {
-    title: "Learn Japanese with Moeno | Private Lessons & Conversation Practice",
+    title:
+      "Learn Japanese with Moeno | Private Lessons & Conversation Practice",
     description:
       "Master Japanese with Moeno, a native speaker! Private lessons for beginners, JLPT prep, and conversation practice. Learn Japanese online the authentic way!",
     url: "https://nihongowithmoeno.com",
@@ -53,13 +55,18 @@ export const metadata = {
   // },
 };
 
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geist.variable} min-h-screen flex flex-col bg-gray-900`} suppressHydrationWarning>
+      <body
+        className={`${geist.variable} min-h-screen flex flex-col bg-gray-900`}
+        suppressHydrationWarning
+      >
         <Navbar />
-        <main className="flex-grow">{children}</main>
+
+        <main className="flex-grow">
+          <AuthContextProvider>{children}</AuthContextProvider>
+        </main>
         <Footer />
       </body>
     </html>

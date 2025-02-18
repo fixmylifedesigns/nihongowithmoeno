@@ -41,11 +41,11 @@ const Footer = () => {
                   FAQ
                 </Link>
               </li>
-              {/* <li>
-                <Link href="/contact" className="hover:text-white">
-                  Contact
+              <li>
+                <Link href="/login" className="hover:text-white">
+                  Teacher Dashboard
                 </Link>
-              </li> */}
+              </li>
             </ul>
           </div>
 
@@ -70,7 +70,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-center">
           <p>&copy; {currentYear} Nihongo with Moeno. All rights reserved.</p>
           <p className="mt-2">
-            Website made by <a href="https://stealthwork.app" className="text-blue-400 hover:underline">stealthwork.app</a>
+            Website made by <a href="https://www.minnastudy.com" className="text-blue-400 hover:underline">minnastudy.com</a>
           </p>
         </div>
       </div>

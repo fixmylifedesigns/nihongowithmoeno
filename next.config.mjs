@@ -1,9 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // Enable edge runtime for API routes
-    experimental: {
-      serverActions: {},
-    },
     images: {
       unoptimized: true,
       domains: ['*'],
@@ -15,7 +11,7 @@ const nextConfig = {
       ],
     },
     // Add in for mobile 
-    output: "export",
+    // output: "export",
     distDir: ".next",
     // distDir: 'out',
   };

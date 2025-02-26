@@ -12,7 +12,7 @@ const Navbar = () => {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/classes", label: "Classes" },
-    { href: "/material", label: "Learning Material" },
+    { href: "http://localhost:3000/", label: "Shop" },
     { href: "/faq", label: "FAQ" },
 
     // { href: "/contact", label: "Contact" },

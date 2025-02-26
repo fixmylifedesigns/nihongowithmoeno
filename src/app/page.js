@@ -7,9 +7,13 @@ import { useState } from "react";
 import jsonp from "jsonp";
 import banner from "@/../public/images/banner-large.jpg"
 
+// Define placeholder background color
+const PLACEHOLDER_BG = "bg-gray-200";
+
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
   const [email, setEmail] = useState("");
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const handleModalToggle = () => {
     setShowModal(!showModal);
@@ -35,17 +39,28 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[600px] flex items-center">
+      <section className={`relative h-[600px] flex items-center ${PLACEHOLDER_BG} transition-opacity duration-500`}>
         <div className="absolute inset-0 z-0">
+          {/* Low quality placeholder */}
           <Image
             src={banner}
             alt="Japanese scenery overlooking Kyoto with a traditional pagoda"
             fill
-            className="object-cover object-right md:object-center brightness-50"
+            className={`
+              object-cover object-right md:object-center brightness-50
+              ${imageLoaded ? 'opacity-100' : 'opacity-0'}
+              transition-opacity duration-500
+            `}
             priority
+            quality={75} // Reduced quality for faster load
+            loading="eager"
+            onLoad={() => setImageLoaded(true)}
+            sizes="100vw" // This tells Next.js to generate appropriate sizes
+            placeholder="blur" // This will use the base64 placeholder from the imported image
           />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+          {/* Rest of the hero content remains the same */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
             Start Learning Japanese Today
           </h1>

@@ -1,14 +1,15 @@
 "use client";
 import { useState } from "react";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 import Image from "next/image";
-import VideosSection from "./video/VideosSection";
+import VideosSection from "../video/VideosSection";
+import CreateBlogNav from "./CreateBlogNav";
 
 export default function Dashboard() {
   const { user, logout } = useAuth();
   const [activeTab, setActiveTab] = useState("Tutorials");
 
-  const nav = ["Tutorials", "GPT Tools", "Design Templates"];
+  const nav = ["Tutorials", "GPT Tools", "Design Templates", "Create Blog"];
 
   // GPT tools data
   const gptTools = [
@@ -251,6 +252,12 @@ export default function Dashboard() {
                   </p>
                 </div>
               </div>
+            </div>
+          )}
+
+          {activeTab === "Create Blog" && (
+            <div className="bg-gray-50 rounded-lg p-4 sm:p-6">
+              <CreateBlogNav />
             </div>
           )}
 

@@ -1,12 +1,12 @@
-import { Geist } from "next/font/google";
+import { Inter } from "next/font/google"; // Inter is very similar to Geist
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AuthContextProvider } from "../context/AuthContext";
 
-const geist = Geist({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-geist",
+  variable: "--font-inter",
 });
 
 export const metadata = {
@@ -59,15 +59,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geist.variable} min-h-screen flex flex-col bg-gray-900`}
+        className={`${inter.variable} min-h-screen flex flex-col bg-gray-900`}
         suppressHydrationWarning
       >
-        <Navbar />
-
-        <main className="flex-grow">
-          <AuthContextProvider>{children}</AuthContextProvider>
-        </main>
-        <Footer />
+        <AuthContextProvider>
+          <Navbar />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </AuthContextProvider>
       </body>
     </html>
   );

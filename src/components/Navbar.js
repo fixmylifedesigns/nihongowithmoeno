@@ -12,7 +12,7 @@ const Navbar = () => {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/classes", label: "Classes" },
-    { href: "http://localhost:3000/", label: "Shop" },
+    { href: "http://shop.nihongowithmoeno.com", label: "Shop" },
     { href: "/faq", label: "FAQ" },
 
     // { href: "/contact", label: "Contact" },
@@ -100,13 +100,13 @@ const Navbar = () => {
                 {label}
               </Link>
             ))}
-            <Link
+            {/* <Link
               href="/book"
               className="block px-3 py-2 text-base font-medium text-white bg-red-600 hover:bg-red-700"
               onClick={() => setIsMenuOpen(false)}
             >
               Book a Lesson
-            </Link>
+            </Link> */}
           </div>
         </div>
       )}

@@ -13,7 +13,7 @@ import { ListPlugin } from "@lexical/react/LexicalListPlugin";
 import { LinkPlugin } from "@lexical/react/LexicalLinkPlugin";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 import ToolbarPlugin from "./plugins/ToolbarPlugin";
-import { OnChangePlugin } from "./plugins/OnChangePlugin";
+import { OnChangePlugin } from "./plugins/OnChangeplugin";
 
 const CreateBlogNav = () => {
   const [formData, setFormData] = useState({

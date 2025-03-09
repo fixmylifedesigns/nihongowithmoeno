@@ -4,12 +4,13 @@ import { useAuth } from "../../context/AuthContext";
 import Image from "next/image";
 import VideosSection from "../video/VideosSection";
 import CreateBlogNav from "./CreateBlogNav";
+import DashboardTab from './DashboardTab'
 
 export default function Dashboard() {
   const { user, logout } = useAuth();
-  const [activeTab, setActiveTab] = useState("Tutorials");
+  const [activeTab, setActiveTab] = useState("Dashboard");
 
-  const nav = ["Tutorials", "GPT Tools", "Design Templates", "Create Blog"];
+  const nav = ["Dashboard","Tutorials", "GPT Tools", "Design Templates", "Create Blog"];
 
   // GPT tools data
   const gptTools = [
@@ -56,6 +57,13 @@ export default function Dashboard() {
       url: "https://www.canva.com/design/DAGdvNqIedk/YfKEZh3A9U29Hs5FZ1iizg/edit",
       category: "Social Media",
       thumbnail: "/images/boyword.png",
+    },
+    {
+      name: "Quiz Video",
+      description: "Instagram Reel for quiz",
+      url: "https://www.canva.com/design/DAGgkXl5Fmg/LhiYM7bEV22EeRT9HGHePQ/edit",
+      category: "Social Media",
+      thumbnail: "/images/quiz.png",
     },
   ];
 
@@ -109,6 +117,7 @@ export default function Dashboard() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Tab Content */}
         <div className="bg-gray-50 rounded-lg p-6">
+          {activeTab === "Dashboard" && <DashboardTab />}
           {activeTab === "GPT Tools" && (
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -34,7 +34,7 @@ export async function POST(req) {
     // }
 
     const response = await fetch(
-      `https://api.airtable.com/v0/${baseId}/Table%201`,
+      `https://api.airtable.com/v0/${baseId}/BlogPosts`,
       {
         method: "POST",
         headers: {
@@ -95,7 +95,7 @@ export async function GET() {
   try {
     const baseId = process.env.AIRTABLE_BASE_ID;
     const response = await fetch(
-      `https://api.airtable.com/v0/${baseId}/Table%201?sort%5B0%5D%5Bfield%5D=Date%20Published&sort%5B0%5D%5Bdirection%5D=desc`,
+      `https://api.airtable.com/v0/${baseId}/BlogPosts?sort%5B0%5D%5Bfield%5D=Date%20Published&sort%5B0%5D%5Bdirection%5D=desc`,
       {
         headers: {
           Authorization: `Bearer ${process.env.AIRTABLE_ACCESS_TOKEN}`,

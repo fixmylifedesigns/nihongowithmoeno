@@ -8,7 +8,6 @@ export default function BlogPage() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
   useEffect(() => {
     fetchPosts();
   }, []);
@@ -77,23 +76,48 @@ export default function BlogPage() {
               key={post.id}
               className="bg-white rounded-lg shadow overflow-hidden"
             >
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-4">
-                  <span
-                    className={`px-3 py-1 rounded-full text-sm font-medium
-                    ${
-                      post.fields.Category === "Grammar"
-                        ? "bg-blue-100 text-blue-800"
-                        : "bg-green-100 text-green-800"
-                    }`}
-                  >
-                    {post.fields.Category}
-                  </span>
-                  <time className="text-sm text-gray-500">
-                    {formatDate(post.fields["Date Published"])}
-                  </time>
-                </div>
+              {/* Image container with relative positioning */}
+              <div className="relative h-48 w-full overflow-hidden">
+                {post.fields.Banner && post.fields.Banner[0]?.url ? (
+                  <Image
+                    src={post.fields.Banner[0].url}
+                    alt={post.fields.Title || "Blog post image"}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    priority
+                  />
+                ) : (
+                  <div className="bg-gray-200 h-full w-full flex items-center justify-center">
+                    <span className="text-gray-400">No image available</span>
+                  </div>
+                )}
 
+                {/* Overlay for category and date */}
+                <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-80 p-3">
+                  <div className="flex items-center gap-2">
+                    <span
+                      className={`px-3 py-1 rounded-full text-sm font-medium
+                     ${
+                       post.fields.Category === "Grammar"
+                         ? "bg-blue-100 text-blue-800"
+                         : post.fields.Category === "Vocabulary"
+                         ? "bg-green-100 text-green-800"
+                         : post.fields.Category === "Culture"
+                         ? "bg-purple-100 text-purple-800"
+                         : "bg-gray-100 text-gray-800"
+                     }`}
+                    >
+                      {post.fields.Category}
+                    </span>
+                    <time className="text-sm text-gray-700">
+                      {formatDate(post.fields["Date Published"])}
+                    </time>
+                  </div>
+                </div>
+              </div>
+
+              {/* Content section */}
+              <div className="p-6">
                 <h2 className="text-2xl font-bold text-gray-900 mb-3">
                   <Link
                     href={`/blog/${post.id}`}

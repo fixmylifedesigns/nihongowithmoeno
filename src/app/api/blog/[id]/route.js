@@ -9,7 +9,7 @@ export async function GET(req, { params }) {
     const postId = params.id;
 
     const response = await fetch(
-      `https://api.airtable.com/v0/${baseId}/Table%201/${postId}`,
+      `https://api.airtable.com/v0/${baseId}/BlogPosts/${postId}`,
       {
         headers: {
           Authorization: `Bearer ${process.env.AIRTABLE_ACCESS_TOKEN}`,

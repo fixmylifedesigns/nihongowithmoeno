@@ -48,7 +48,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link href="/login" className="hover:text-white">
-                  Teacher Dashboard
+                  Student Dashboard
                 </Link>
               </li>
             </ul>

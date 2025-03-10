@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import ContentRenderer from "@/components/ContentRenderer.js";
@@ -25,6 +26,7 @@ export default function BlogPostPage() {
         );
       }
       const data = await response.json();
+
       setPost(data.data);
     } catch (err) {
       setError(err.message);
@@ -88,7 +90,9 @@ export default function BlogPostPage() {
     );
   }
 
-  const parsedContent = post.fields.Content ? JSON.parse(post.fields.Content) : null;
+  const parsedContent = post.fields.Content
+    ? JSON.parse(post.fields.Content)
+    : null;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -101,6 +105,19 @@ export default function BlogPostPage() {
         </Link>
 
         <article className="bg-white rounded-lg shadow-lg overflow-hidden text-black">
+          {/* Banner Image */}
+          {post.fields.Banner && post.fields.Banner[0]?.url ? (
+            <div className="relative h-64 md:h-80 lg:h-96 w-full">
+              <Image
+                src={post.fields.Banner[0].url}
+                alt={post.fields.Title || "Blog post banner"}
+                fill
+                priority
+                style={{ objectFit: "cover" }}
+                className="w-full"
+              />
+            </div>
+          ) : null}
           <div className="p-8">
             <div className="flex items-center gap-2 mb-6">
               <span

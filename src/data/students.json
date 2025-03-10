@@ -1,0 +1,26 @@
+{
+  "STUDENTS_DATA": [
+    {
+      "name": "Irving",
+      "email": "irving.duran1@gmail.com",
+      "googleMeetsUrl": "https://meet.google.com/xyz-abcd-123",
+      "trelloUrl": "https://trello.com/b/someboard/student-irving",
+      "slackChannel": "#irving-japanese-lessons",
+      "scheduledClasses": [
+        { "date": "2025-03-15T10:00:00", "topic": "Basic Greetings" },
+        { "date": "2025-03-22T10:00:00", "topic": "Particles は and が" }
+      ]
+    },
+    {
+      "name": "Alexis",
+      "email": "sarah.example@gmail.com",
+      "googleMeetsUrl": "https://meet.google.com/abc-defg-456",
+      "trelloUrl": "https://trello.com/b/someboard/student-sarah",
+      "slackChannel": "#sarah-japanese-lessons",
+      "scheduledClasses": [
+        { "date": "2025-03-16T14:00:00", "topic": "Basic Conversation" },
+        { "date": "2025-03-23T14:00:00", "topic": "Numbers and Counting" }
+      ]
+    }
+  ]
+}

@@ -1,10 +1,15 @@
-'use client'
+"use client";
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-const ALLOWED_EMAILS = ["nihongowithmoeno@gmail.com", "ijd.irving@gmail.com"];
+// Admin emails list
+const ADMIN_EMAILS = [
+  "nihongowithmoeno@gmail.com",
+  "ijd.irving@gmail.com",
+  "mo4324eno@gmail.com",
+];
 
 export default function Login() {
   const [error, setError] = useState("");
@@ -19,13 +24,36 @@ export default function Login() {
     try {
       const result = await signInWithGoogle();
       if (result?.user) {
-        // Check if the user's email is in the allowed list
-        if (ALLOWED_EMAILS.includes(result.user.email)) {
+        const email = result.user.email;
+
+        // Check if the user's email is in the admin list
+        if (ADMIN_EMAILS.includes(email)) {
           router.push("/dashboard");
-        } else {
-          // Sign out the user if they're not authorized
+          return;
+        }
+
+        // Check if the email exists in Airtable student data
+        try {
+          const response = await fetch(
+            `/api/students?email=${encodeURIComponent(email)}`
+          );
+          const data = await response.json();
+
+          if (response.ok && data.success && data.data.length > 0) {
+            // Store student data in localStorage for use in the student dashboard
+            localStorage.setItem("studentData", JSON.stringify(data.data[0]));
+            router.push("/student/dashboard");
+          } else {
+            // Not authorized - neither admin nor registered student
+            await result.user.delete();
+            setError(
+              "This email is not enrolled with NihongoWithMoeno. If you are a student, please use your registered email or contact us for support."
+            );
+          }
+        } catch (fetchError) {
+          console.error("Error fetching student data:", fetchError);
+          setError("Unable to verify student status. Please try again later.");
           await result.user.delete();
-          setError("Unauthorized access. Please use an authorized account.");
         }
       }
     } catch (err) {
@@ -40,15 +68,13 @@ export default function Login() {
     <div className="min-h-screen flex flex-col items-center justify-center bg-white px-4">
       <div className="w-full max-w-md space-y-8 flex flex-col items-center">
         {/* Logo */}
-        {/* <div className="w-32 h-32 relative mb-8"> */}
-          <Image
-            src="/images/nihongowithmoeno.png" // Replace with your actual logo path
-            alt="Nihongo with Moeno"
-            width={500}
-            height={500}
-            priority
-          />
-        {/* </div> */}
+        <Image
+          src="/images/nihongowithmoeno.png" // Replace with your actual logo path
+          alt="Nihongo with Moeno"
+          width={500}
+          height={500}
+          priority
+        />
 
         {error && (
           <div className="w-full bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg text-sm text-center">

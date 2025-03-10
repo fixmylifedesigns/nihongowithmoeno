@@ -4,13 +4,21 @@ import { useAuth } from "../../context/AuthContext";
 import Image from "next/image";
 import VideosSection from "../video/VideosSection";
 import CreateBlogNav from "./CreateBlogNav";
-import DashboardTab from './DashboardTab'
+import DashboardTab from "./DashboardTab";
+import StudentManagementTab from "./StudentManagementTab";
 
 export default function Dashboard() {
   const { user, logout } = useAuth();
   const [activeTab, setActiveTab] = useState("Dashboard");
 
-  const nav = ["Dashboard","Tutorials", "GPT Tools", "Design Templates", "Create Blog"];
+  const nav = [
+    "Dashboard",
+    "Students",
+    "Tutorials",
+    "GPT Tools",
+    "Design Templates",
+    "Create Blog",
+  ];
 
   // GPT tools data
   const gptTools = [
@@ -118,6 +126,7 @@ export default function Dashboard() {
         {/* Tab Content */}
         <div className="bg-gray-50 rounded-lg p-6">
           {activeTab === "Dashboard" && <DashboardTab />}
+          {activeTab === "Students" && <StudentManagementTab />}
           {activeTab === "GPT Tools" && (
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

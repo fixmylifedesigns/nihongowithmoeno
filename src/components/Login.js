@@ -69,7 +69,7 @@ export default function Login() {
       <div className="w-full max-w-md space-y-8 flex flex-col items-center">
         {/* Logo */}
         <Image
-          src="/images/nihongowithmoeno.png" // Replace with your actual logo path
+          src="/images/nihongowithmoeno.webp"
           alt="Nihongo with Moeno"
           width={500}
           height={500}

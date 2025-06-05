@@ -34,7 +34,7 @@ export const tutorials = [
     title: "Waitlist Emails",
     description: "How to find all the apply that signed up for the waitlist to be a student",
     japanese: {
-      url: "https://www.youtube.com/watch?v=ZTWJYbuAxew",
+      url: "https://youtu.be/DMMjzsx1PCI",
     },
     english: {
       url: "https://www.youtube.com/watch?v=ZTWJYbuAxew",

@@ -30,6 +30,17 @@ export const tutorials = [
     },
     category: "Instagram Post",
   },
+  {
+    title: "Waitlist Emails",
+    description: "How to find all the apply that signed up for the waitlist to be a student",
+    japanese: {
+      url: "https://www.youtube.com/watch?v=ZTWJYbuAxew",
+    },
+    english: {
+      url: "https://www.youtube.com/watch?v=ZTWJYbuAxew",
+    },
+    category: "Students",
+  },
 ];
 
 export default function VideosSection() {

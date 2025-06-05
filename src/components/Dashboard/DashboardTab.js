@@ -37,6 +37,12 @@ const DashboardTab = () => {
       icon: "trello",
       description: "Track projects, tasks and curriculum development"
     },
+        { 
+      label: "Student Applications", 
+      url: "https://docs.google.com/forms/d/1oGZWHRWtiHyUUGj0FNSm967ksm87DtUZ9JF7o1bDzKA/edit#responses", 
+      icon: "users",
+      description: "View all student applications"
+    },
   ];
 
   // Setmore services

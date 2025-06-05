@@ -10,6 +10,7 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@firebase/auth": "^1.9.0",
     "@lexical/react": "^0.25.0",
     "airtable": "^0.12.2",

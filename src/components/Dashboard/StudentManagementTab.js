@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import StudentManagement from "./StudentManagement";
+import WaitlistManagement from "./WaitlistManagement";
 
 export default function StudentManagementTab() {
   const [activeSection, setActiveSection] = useState("manage");
@@ -21,6 +22,16 @@ export default function StudentManagementTab() {
           Manage Students
         </button>
         <button
+          onClick={() => setActiveSection("waitlist")}
+          className={`pb-3 px-4 ${
+            activeSection === "waitlist"
+              ? "border-b-2 border-blue-600 text-blue-600 font-medium"
+              : "text-gray-500 hover:text-gray-700"
+          }`}
+        >
+          Waitlist Applications
+        </button>
+        <button
           onClick={() => setActiveSection("settings")}
           className={`pb-3 px-4 ${
             activeSection === "settings"
@@ -33,10 +44,13 @@ export default function StudentManagementTab() {
       </div>
 
       {activeSection === "manage" && <StudentManagement />}
+      {activeSection === "waitlist" && <WaitlistManagement />}
 
       {activeSection === "settings" && (
         <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-          <h3 className="text-lg font-semibold mb-4 text-black">Student Settings</h3>
+          <h3 className="text-lg font-semibold mb-4 text-black">
+            Student Settings
+          </h3>
           <p className="text-gray-600">
             Configure student-related settings here. This section can be
             expanded with additional configuration options in the future.
@@ -45,7 +59,9 @@ export default function StudentManagementTab() {
           {/* Placeholder for future settings */}
           <div className="mt-6 grid grid-cols-1 gap-4">
             <div className="border border-gray-200 rounded-md p-4">
-              <h4 className="font-medium text-black">Default Student Settings</h4>
+              <h4 className="font-medium text-black">
+                Default Student Settings
+              </h4>
               <p className="text-sm text-gray-500 mt-1">
                 These settings will be applied to new students by default.
               </p>

@@ -107,9 +107,9 @@ export default function Dashboard() {
               </nav>
             </div>
             <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0 ml-4">
-              <span className="text-gray-600 text-sm sm:text-base hidden sm:inline">
+              {/* <span className="text-gray-600 text-sm sm:text-base hidden sm:inline">
                 {user?.email}
-              </span>
+              </span> */}
               <button
                 onClick={handleLogout}
                 className="px-3 sm:px-4 py-1.5 sm:py-2 bg-red-600 text-white text-sm sm:text-base rounded-md hover:bg-red-700 transition-colors"

@@ -37,6 +37,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/worksheets" className="hover:text-white">
+                  Worksheets
+                </Link>
+              </li>
+              <li>
                 <Link href="/material" className="hover:text-white">
                   Learning Material
                 </Link>

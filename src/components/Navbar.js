@@ -12,8 +12,9 @@ const Navbar = () => {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/classes", label: "Classes" },
-    { href: "http://shop.nihongowithmoeno.com", label: "Shop" },
-    { href: "/faq", label: "FAQ" },
+    { href: "/worksheets", label: "Worksheets" },
+    // { href: "http://shop.nihongowithmoeno.com", label: "Shop" },
+    // { href: "/faq", label: "FAQ" },
 
     // { href: "/contact", label: "Contact" },
   ];
